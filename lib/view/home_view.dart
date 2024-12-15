@@ -11,13 +11,17 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: CustomButtonWidget(
-            radius: 8.r,
-            textStyle: AppFontSize.medium16(AppColors.whiteText),
-            width: 343.w,
-            height: 48.h,
-            color: AppColors.greenButton,
-            text: 'Next'),
+        child: Column(
+          children: [
+            CustomButtonWidget(
+                radius: 8.r,
+                textStyle: AppFontSize.medium16(AppColors.whiteText),
+                width: 343.w,
+                height: 48.h,
+                color: AppColors.greenButton,
+                text: 'Next'),
+          ],
+        ),
       ),
     );
   }

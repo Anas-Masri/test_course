@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_course/view/home_view.dart';
+import 'package:test_course/view/products/prouducts_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +23,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const HomeView());
+        child: const ProuductsView());
   }
 }

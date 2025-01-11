@@ -187,7 +187,7 @@ class _Onboarding5ViewState extends State<Onboarding5View> {
                         height: 48.h,
                         color: AppColors.greenButton,
                         text: 'Finish, Good to go',
-                        textStyle: AppTextStyle.medium16(AppColors.whiteText),
+                        textStyle: AppTextStyle.medium16(AppColors.white),
                         radius: 8.r),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.1),
                   ],

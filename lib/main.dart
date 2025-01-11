@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:test_course/view/splash/splash_view.dart';
+import 'package:test_course/view/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +22,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const SplashView());
+        child: const HomeView());
   }
 }

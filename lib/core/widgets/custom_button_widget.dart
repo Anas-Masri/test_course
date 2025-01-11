@@ -14,7 +14,7 @@ class CustomButtonWidget extends StatelessWidget {
       this.onTap,
       this.widget = const Icon(
         Icons.arrow_forward,
-        color: AppColors.whiteText,
+        color: AppColors.white,
       )});
   final double width;
   final double height;

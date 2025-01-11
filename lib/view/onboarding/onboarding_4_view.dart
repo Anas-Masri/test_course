@@ -128,7 +128,7 @@ class _Onboarding4ViewState extends State<Onboarding4View> {
                       height: 48.h,
                       color: AppColors.blueButton,
                       text: 'Sync From Facebook',
-                      textStyle: AppTextStyle.medium16(AppColors.whiteText),
+                      textStyle: AppTextStyle.medium16(AppColors.white),
                       radius: 8.r),
                   SizedBox(
                     height: 16.h,
@@ -160,7 +160,7 @@ class _Onboarding4ViewState extends State<Onboarding4View> {
                       height: 48.h,
                       color: AppColors.greenButton,
                       text: 'Next',
-                      textStyle: AppTextStyle.medium16(AppColors.whiteText),
+                      textStyle: AppTextStyle.medium16(AppColors.white),
                       radius: 8.r),
                 ],
               ),

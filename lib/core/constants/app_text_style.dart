@@ -17,6 +17,10 @@ class AppTextStyle {
     return TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: color);
   }
 
+  static TextStyle medium13(color) {
+    return TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: color);
+  }
+
   static TextStyle medium14(color) {
     return TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: color);
   }

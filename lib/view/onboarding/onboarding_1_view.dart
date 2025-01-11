@@ -170,7 +170,7 @@ class _Onboarding1ViewState extends State<Onboarding1View> {
                           height: 48.h,
                           color: AppColors.greenButton,
                           text: 'Next',
-                          textStyle: AppTextStyle.medium16(AppColors.whiteText),
+                          textStyle: AppTextStyle.medium16(AppColors.white),
                           radius: 8.r),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.1,

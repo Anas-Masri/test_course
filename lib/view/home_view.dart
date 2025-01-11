@@ -1,16 +1,101 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_course/core/constants/app_colors.dart';
+import 'package:test_course/core/constants/app_constants.dart';
 import 'package:test_course/core/constants/app_text_style.dart';
 import 'package:test_course/core/widgets/custom_text_form_field_widget.dart';
+import 'package:test_course/core/widgets/grid_view_item_builder.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int indexsellect = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.graybackgroundColor,
+        bottomNavigationBar: BottomNavigationBar(
+            elevation: 25,
+            backgroundColor: AppColors.white,
+            currentIndex: indexsellect,
+            onTap: (value) {
+              indexsellect = value;
+              setState(() {});
+            },
+            selectedItemColor: AppColors.white,
+            iconSize: 24,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                activeIcon: Container(
+                  height: 54.r,
+                  width: 54.r,
+                  decoration: BoxDecoration(
+                      color: AppColors.greenButton,
+                      borderRadius: BorderRadius.circular(54.r)),
+                  child: const Icon(
+                    Icons.home_outlined,
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.home_outlined,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Container(
+                  height: 54.r,
+                  width: 54.r,
+                  decoration: BoxDecoration(
+                      color: AppColors.greenButton,
+                      borderRadius: BorderRadius.circular(54.r)),
+                  child: const Icon(
+                    Icons.category_outlined,
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.category_outlined,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Container(
+                  height: 54.r,
+                  width: 54.r,
+                  decoration: BoxDecoration(
+                      color: AppColors.greenButton,
+                      borderRadius: BorderRadius.circular(54.r)),
+                  child: const Icon(
+                    Icons.shopping_bag_outlined,
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.shopping_bag_outlined,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Container(
+                  height: 54.r,
+                  width: 54.r,
+                  decoration: BoxDecoration(
+                      color: AppColors.greenButton,
+                      borderRadius: BorderRadius.circular(54.r)),
+                  child: const Icon(
+                    Icons.menu,
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.menu,
+                ),
+                label: '',
+              ),
+            ]),
         body: Stack(
           fit: StackFit.expand,
           children: [
@@ -19,7 +104,7 @@ class HomeView extends StatelessWidget {
               child: Image.asset(
                 'assets/images/top_shape.png',
                 width: 375.65.w,
-                height: 211.2.h,
+                height: 200.h,
                 fit: BoxFit.cover,
               ),
             ),
@@ -27,33 +112,16 @@ class HomeView extends StatelessWidget {
               top: 0.h,
               child: Container(
                 width: 375.65.w,
-                height: 211.2.h,
+                height: 200.h,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(
-                        colors: [Colors.white, Colors.white12],
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter)),
-              ),
-            ),
-            Positioned(
-              bottom: 0.h,
-              child: Image.asset(
-                'assets/images/bottom_shape.png',
-                width: 375.w,
-                height: 274.6.h,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Positioned(
-              bottom: 0.h,
-              child: Container(
-                width: 375.w,
-                height: 274.6.h,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
-                  Colors.white.withValues(alpha: 0.55),
-                  Colors.white54
-                ], end: Alignment.bottomCenter, begin: Alignment.topCenter)),
+                  colors: [
+                    AppColors.graybackgroundColor,
+                    Colors.white12,
+                  ],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                )),
               ),
             ),
             Column(
@@ -110,7 +178,26 @@ class HomeView extends StatelessWidget {
                     controller: TextEditingController(),
                     color: AppColors.grayButton,
                     width: 343.w,
-                    height: 52.h)
+                    height: 52.h),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: 1.2,
+                              mainAxisSpacing: 14,
+                              crossAxisSpacing: 18),
+                      itemCount: AppConstants.imageList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return GridViewItemBuilder(
+                            image: AppConstants.imageList[index],
+                            categoryName: AppConstants.titleList[index]);
+                      },
+                    ),
+                  ),
+                ),
               ],
             )
           ],

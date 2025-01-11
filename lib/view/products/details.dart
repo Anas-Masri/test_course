@@ -35,7 +35,7 @@ class _DetailsState extends State<Details> {
                       bottom: 974,
                       right: 0,
                       child: Image.asset(
-                        "assets/images/Rectangle 1 (1).png",
+                        "assets/images/Rectangle 1 (1).png",fit: BoxFit.fill,
                         height: 308,
                         width: 294,
                       )),

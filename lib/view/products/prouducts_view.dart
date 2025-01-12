@@ -87,7 +87,7 @@ class _ProuductsViewState extends State<ProuductsView> {
                   itemBuilder: (context, i) {
                     return SizedBox(
                         height: 293,
-                        width: 164,
+                        width: 163,
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
